@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+
+
+
+
+
+
+
+
+
+
+.bgUnderlay{
+    clip-path: polygon(36% 0, 100% 0%, 63% 100%, 0 100%);
+}
+
+
+.bgUnder{
+    clip-path: polygon(0 56%, 100% 0, 100% 100%, 0% 100%);
+}
+
+
+
+
+
+/* FLOAT LEFT ↔ RIGHT + SLIGHT UP/DOWN */
+@keyframes floatX {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(5px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+.float-x {
+  animation: floatX 6s ease-in-out infinite;
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease forwards;
+}
+
+
+/* SLIDE IN + BOUNCE + FADE + SCALE */
+@keyframes slideInBounceFadeScale {
+  0% {
+    transform: translateX(100%) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-10%) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(5%) scale(0.98);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* SLIDE OUT + FADE + SLIGHT SHRINK */
+@keyframes slideOutRightFadeScale {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.animate-slideInBounce {
+  animation: slideInBounceFadeScale 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slideOutRight {
+  animation: slideOutRightFadeScale 0.6s ease-in forwards;
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-slowZoom {
+  animation: slowZoom 2s ease-in-out forwards;
+}
+
+/* FLOAT + SWING COMBINED */
+@keyframes floatSwing {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(8px) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-floatSwing {
+  transform-origin: top center;
+  animation: floatSwing 3s ease-in-out infinite;
+}
+
+
+.ceobg{
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+
+.ceobg1{
+ clip-path: polygon(100% 0%, 57% 49%, 100% 100%, 49% 100%, 0% 50%, 51% 0);
+}
