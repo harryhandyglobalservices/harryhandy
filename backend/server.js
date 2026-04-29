@@ -16,9 +16,24 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
+
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // local dev
+      "http://localhost:3000",
+      "https://harryhandy-i1wp.vercel.app/", // your frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+
 
 // Routes
 app.use("/api", chatRoutes);
