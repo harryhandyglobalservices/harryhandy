@@ -219,7 +219,7 @@ export default function Navbar() {
 
             {/* ================= MAIN NAV ================= */}
             <nav
-                className={`bg-gray-50 text-gray-800 px-4 md:px-12 py-3 flex justify-between items-center shadow-md ${isSticky ? "fixed top-0 right-0 left-0 z-[9999]" : ""
+                className={`bg-gray-50 text-gray-800 px-4 md:px-12 py-3 flex h-30 justify-between items-center shadow-md ${isSticky ? "fixed top-0 right-0 left-0 z-[9999]" : ""
                     }`}
             >
                 <div className="w-full mx-auto flex items-center justify-between px-4 md:px-12 py-3">
