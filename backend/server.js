@@ -21,18 +21,7 @@ app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173", // local dev
-      "http://localhost:3000",
-      "https://harryhandy-i1wp.vercel.app/", // your frontend
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors())
 
 
 // Routes
