@@ -6,7 +6,7 @@ import { FaPlay } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-/* 🔥 VARIANTS */
+/*  VARIANTS */
 const container = {
     hidden: {},
     show: {

@@ -4,33 +4,29 @@ import sec1 from "../assets/sec1.png";
 import sec2 from "../assets/sec2.png";
 import { useNavigate } from "react-router-dom";
 
-/* 🔥 VARIANTS */
 const container = {
   hidden: {},
   show: {
-    transition: {
-      staggerChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, marginTop: 40 },
   show: {
     opacity: 1,
-    y: 0,
+    marginTop: 0,
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 export default function AboutSection() {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
   return (
-    <section ref={ref} className="w-full bg-gray-50">
+    <section ref={ref} className="w-full bg-gray-50 relative z-0">
 
       {/* HEADER */}
       <motion.div
@@ -63,15 +59,14 @@ export default function AboutSection() {
 
           {/* LEFT SIDE */}
           <motion.div
+            className="relative z-0 space-y-6"
             variants={{
-              hidden: { opacity: 0, x: -80 },
+              hidden: { opacity: 0 },
               show: {
                 opacity: 1,
-                x: 0,
                 transition: { duration: 0.8 },
               },
             }}
-            className="space-y-6"
           >
 
             {/* IMAGE */}
@@ -95,9 +90,8 @@ export default function AboutSection() {
 
             {/* BUTTON */}
             <motion.button
-            onClick={()=>navigate('/booking-page')}
+              onClick={() => navigate('/booking-page')}
               variants={item}
-              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-blue-400 hover:bg-blue-500 text-black px-8 py-4 cursor-pointer rounded-lg font-semibold shadow-md transition"
             >
@@ -108,15 +102,14 @@ export default function AboutSection() {
 
           {/* RIGHT SIDE */}
           <motion.div
+            className="relative z-0 flex justify-center lg:justify-end"
             variants={{
-              hidden: { opacity: 0, x: 80 },
+              hidden: { opacity: 0 },
               show: {
                 opacity: 1,
-                x: 0,
                 transition: { duration: 0.8 },
               },
             }}
-            className="relative flex justify-center lg:justify-end"
           >
 
             {/* MAIN IMAGE */}
@@ -126,16 +119,16 @@ export default function AboutSection() {
               className="w-full max-w-xl h-[400px] md:h-[600px] object-cover rounded-2xl shadow-lg"
             />
 
-            {/* FLOATING LABEL */}
+            {/* FLOATING LABEL (SAFE ANIMATION) */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={
                 isInView
-                  ? { opacity: 1, y: 0, scale: 1 }
-                  : { opacity: 0, y: 40 }
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0 }
               }
               transition={{ duration: 0.6 }}
-              className="absolute bottom-10 -left-6 bg-gray-50 px-12 py-8 rounded-xl "
+              className="absolute bottom-10 -left-6 bg-gray-50 px-12 py-8 rounded-xl"
             >
               <p className="text-gray-800 text-lg font-bold">
                 Office Cleaning
@@ -146,6 +139,7 @@ export default function AboutSection() {
 
         </motion.div>
       </div>
+
     </section>
   );
 }

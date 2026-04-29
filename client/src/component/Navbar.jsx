@@ -28,6 +28,13 @@ export default function Navbar() {
             navigate(`/search?q=${search}`);
         }
     };
+
+    const handleMobileNav = (path) => {
+        navigate(path);
+        setMenuOpen(false);
+    };
+
+
     // Sticky on scroll
     useEffect(() => {
         const handleScroll = () => {
@@ -38,7 +45,7 @@ export default function Navbar() {
     }, [])
 
     return (
-        <header className="w-full  z-9998 relative">
+        <header className="sticky top-0 z-[9999]">
 
             {/* ================= SEARCH OVERLAY ================= */}
             <div
@@ -73,7 +80,7 @@ export default function Navbar() {
 
             {/* ================= MOBILE MENU ================= */}
             <div
-                className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-50 shadow-lg transform transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0  left-0 bg-white z-50 shadow-lg transform transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 <div className="flex justify-between items-center p-6 border-b">
@@ -81,9 +88,11 @@ export default function Navbar() {
                     <button onClick={() => setMenuOpen(false)} className="text-3xl">×</button>
                 </div>
 
-                <ul className="flex flex-col gap-4 p-6 text-lg font-semibold">
+                <ul className="flex flex-col gap-4 my-6 p-6 text-lg font-semibold">
 
-                    <li className="cursor-pointer">Home</li>
+                    <li onClick={() => handleMobileNav('/')} className="cursor-pointer">
+                        Home
+                    </li>
 
                     {/* ABOUT */}
                     <li>
@@ -100,9 +109,17 @@ export default function Navbar() {
                                 }`}
                         >
                             <ul className="pl-4 text-gray-600 text-sm flex flex-col gap-2">
-                                <li onClick={() => navigate('/our-company')} className="px-4  hover:bg-blue-100">Our Company</li>
-                                <li onClick={() => navigate('/our-goals')} className="px-4  hover:bg-blue-100">Goals & Objectives</li>
-                                <li onClick={() => navigate('/mission-vision')} className="px-4  hover:bg-blue-100">Mission & Vision</li>
+                                <li onClick={() => handleMobileNav('/our-company')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Our Company
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/our-goals')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Goals & Objectives
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/mission-vision')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Mission & Vision
+                                </li>
                             </ul>
                         </div>
 
@@ -124,24 +141,51 @@ export default function Navbar() {
                                 }`}
                         >
                             <ul className="pl-4 text-gray-600 text-sm flex flex-col gap-2">
-                                <li onClick={() => navigate('/post-construction')} className="px-4  hover:bg-blue-100">Post Construction Cleaning </li>
-                                <li onClick={() => navigate('/deep-cleaning')} className="px-4  hover:bg-blue-100">Deep Cleaning </li>
-                                <li onClick={() => navigate('/move-cleaning')} className="px-4  hover:bg-blue-100">Move In & Move Out Cleaning</li>
-                                <li onClick={() => navigate('/weekly-cleaning')} className="px-4  hover:bg-blue-100">Weekly Housekeeping Services</li>
-                                <li onClick={() => navigate('/floor-wash')} className="px-4  hover:bg-blue-100">Floor Wash</li>
-                                <li onClick={() => navigate('/carpet')} className="px-4  hover:bg-blue-100">Capet & Chair Wash</li>
-                                <li onClick={() => navigate('/fumigation')} className="px-4  hover:bg-blue-100">Fumigation & Pest Control Services</li>
-                                <li onClick={() => navigate('/house-keeping')} className="px-4  hover:bg-blue-100">Housekeeping & Sanitation Training</li>
+                                <li onClick={() => handleMobileNav('/post-construction')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Post Construction Cleaning
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/deep-cleaning')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Deep Cleaning
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/move-cleaning')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Move In & Move Out Cleaning
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/weekly-cleaning')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Weekly Housekeeping Services
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/floor-wash')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Floor Wash
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/carpet')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Carpet & Chair Wash
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/fumigation')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Fumigation & Pest Control Services
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/house-keeping')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Housekeeping & Sanitation Training
+                                </li>
                             </ul>
                         </div>
                     </li>
 
-                    <li onClick={() => navigate('/blog-page')} className="hover:text-blue-400 cursor-pointer">Blog</li>
-                    <li onClick={() => navigate('/contact-page')} className="hover:text-blue-400 cursor-pointer">Contact</li>
+                    <li onClick={() => handleMobileNav('/blog-page')} className="cursor-pointer">
+                        Blog
+                    </li>
 
+                    <li onClick={() => handleMobileNav('/contact-page')} className="cursor-pointer">
+                        Contact
+                    </li>
                 </ul>
 
-                <button onClick={() => navigate('/booking-page')} className="block ml-3 md:hidden cursor-pointer bg-blue-600 text-white px-3 py-3 rounded-lg text-sm font-bold">
+                <button onClick={() => navigate('/booking-page')} className="block ml-3 mb-5 md:hidden cursor-pointer bg-blue-600 text-white px-3 py-3 rounded-lg text-sm font-bold">
                     Book Now →
                 </button>
             </div>
@@ -175,13 +219,13 @@ export default function Navbar() {
 
             {/* ================= MAIN NAV ================= */}
             <nav
-                className={`bg-gray-50   text-gray-800 transition-all duration-300 ${isSticky ? "fixed  top-0 left-0 w-full shadow-xl z-40" : ""
+                className={`bg-gray-50 text-gray-800 px-4 md:px-12 py-3 flex justify-between items-center shadow-md ${isSticky ? "fixed top-0 right-0 left-0 z-[9999]" : ""
                     }`}
             >
-                <div className="w-full mx-auto flex items-center justify-between px-4 md:px-16 ">
+                <div className="w-full mx-auto flex items-center justify-between px-4 md:px-12 py-3">
 
                     {/* LOGO */}
-                    <img onClick={() => navigate('/')} className="w-24 cursor-pointer md:w-30" src={logo} alt="logo" />
+                    <img onClick={() => navigate('/')} className="w-16 cursor-pointer md:w-30" src={logo} alt="logo" />
 
                     {/* DESKTOP NAV */}
                     <ul className="hidden lg:flex gap-8 items-center text-2xl font-bold">
@@ -240,7 +284,7 @@ export default function Navbar() {
                     </ul>
 
                     {/* RIGHT ICONS */}
-                    <div className="flex items-center text-xl md:text-2xl gap-6 md:gap-6">
+                    <div className="flex items-center text-xl md:text-2xl gap-3 md:gap-6">
 
                         <FaSearch onClick={() => setSearchOpen(true)} className="cursor-pointer" />
 

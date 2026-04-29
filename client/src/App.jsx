@@ -36,6 +36,7 @@ import SingleBlog from './pages/SingleBlog'
 import VerifyPayment from './pages/VerifyPayment'
 import BookingSuccess from './pages/BookingSuccess'
 import SearchPage from './pages/SearchPage'
+import ScrollToTop from './component/ScrollToTop'
 
 
 
@@ -44,9 +45,11 @@ const App = () => {
   const location = useLocation();
   const isAdminPage = location.pathname.startsWith("/admin");
   return (
-    <div>
+    <>
 
       {!isAdminPage && <Navbar />}
+
+      <ScrollToTop />
 
       <div>
         <Routes>
@@ -97,7 +100,7 @@ const App = () => {
       <WhatsAppButton />
       <ChatWidget />
 
-    </div>
+    </>
   )
 }
 

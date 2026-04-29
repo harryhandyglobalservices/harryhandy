@@ -12,14 +12,14 @@ import Pricing from '../component/Pricing'
 
 const Home = () => {
   return (
-    <div>
-        <Hero/>
+    <div >
+         <Hero/> 
         <WhyFeatures/>
         <WhyUs/>
-        
+         
         <CeoMessage/>
         <VideoSection/>
-        <AboutSection/>
+        <AboutSection/>  
         
    
         <FaqSection/>
