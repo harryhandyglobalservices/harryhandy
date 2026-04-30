@@ -9,7 +9,7 @@ export default function BlogPage() {
   const [categories, setCategories] = useState([]);
   const [search, setSearch] = useState("");
 
-  // ✅ PAGINATION STATE
+  
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
 

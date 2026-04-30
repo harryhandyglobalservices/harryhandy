@@ -173,7 +173,7 @@ export default function OurCompany() {
                 </div>
 
                 {/* WHY WE EXIST */}
-                <div className="max-w-[85] mx-auto px-6 lg:px-12 py-16 grid md:grid-cols-2 gap-10 items-center">
+                <div className="max-w-[85] mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
                     <img
                         variants={fadeUp}

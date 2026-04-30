@@ -177,7 +177,7 @@ export default function AdminDashboard() {
         try {
             const token = localStorage.getItem("adminToken");
 
-            const slug = generateSlug(form.title); // ✅ ADD THIS
+            const slug = generateSlug(form.title); 
 
             const formData = new FormData();
             formData.append("title", form.title);
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
             formData.append("author", form.author);
             formData.append("date", form.date);
             formData.append("category", form.category);
-            formData.append("slug", slug); // ✅ SEND TO BACKEND
+            formData.append("slug", slug); 
             formData.append("image", image);
 
             const res = await API.post(
