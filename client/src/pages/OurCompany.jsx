@@ -172,36 +172,6 @@ export default function OurCompany() {
                     </div>
                 </div>
 
-                {/* WHY WE EXIST */}
-                <div className="max-w-[85] mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
-                    <img
-                        variants={fadeUp}
-                        src={aboutImg}
-                        alt=""
-                        className="rounded-2xl shadow-lg w-full"
-                    />
-
-                    <div variants={fadeUp}>
-                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 text-center md:text-left">
-                            Why We Exist
-                        </h2>
-
-                        <div className="flex justify-center md:justify-start mb-6">
-                            <img src={line5} alt="" className="w-32 sm:w-78" />
-                        </div>
-
-                        <p className="text-gray-600 text-base sm:text-xl leading-relaxed">
-                            We exist to make cleanliness simple, accessible, and reliable for everyone.
-
-                            In a world where time is limited, maintaining a clean environment has become a challenge. We solve that by delivering dependable services people can trust.
-                            <br /><br />
-                            We believe cleanliness is not a luxury, it is a necessity. It improves health, reduces stress, and boosts productivity.
-                            <br /><br />
-                            Our purpose goes beyond cleaning. We restore comfort, order, and freshness to every space we touch.
-                        </p>
-                    </div>
-                </div>
 
                 {/* WHAT DRIVES US */}
                 <div className="max-w-[85%] mx-auto px-6 lg:px-12 py-16 grid md:grid-cols-2 gap-10 items-center">
