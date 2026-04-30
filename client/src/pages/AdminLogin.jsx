@@ -40,7 +40,7 @@ export default function AdminLogin() {
             style={{ backgroundImage: `url(${staff1})` }}
         >
             {/* Overlay */}
-            <div className="absolute w-full h-full bg-black/70"></div>
+            <div className="absolute w-full min-h-screen bg-black/70"></div>
 
             {/* Glass Card */}
             <div className="relative z-10 w-[350px] md:w-[500px] backdrop-blur-lg bg-white/20 border border-white/30 rounded-2xl p-8 shadow-xl">
