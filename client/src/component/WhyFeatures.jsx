@@ -13,19 +13,19 @@ const services = [
   {
     icon: <FaHome />,
     title: "Move Out Cleaning",
-    desc: "Our services go beyond the cleaning will reenergize your home and enhance your life.",
+    desc: "At the heart of our business is customer satisfaction. That’s why we are committed to delivering outstanding service at all times.",
     bg: "bg-orange-100 text-orange-500",
   },
   {
     icon: <FaCalendarAlt />,
     title: "Regular & Monthly Cleaning",
-    desc: "Our services go beyond the cleaning will reenergize your home and enhance your life.",
+    desc: "We are professionals in maintenance and we go all the way to deliver the best.",
     bg: "bg-green-100 text-green-500",
   },
   {
     icon: <FaCheck />,
     title: "Customer Focused Reviews",
-    desc: "Our services go beyond the cleaning will reenergize your home and enhance your life.",
+    desc: "We believe a happy customer is big deal so we deliver great services at all times.",
     bg: "bg-yellow-100 text-yellow-500",
   },
 ];
@@ -49,8 +49,7 @@ export default function WhyFeatures() {
           </h2>
 
           <p className="text-gray-500 mb-8 max-w-lg">
-            Our services go beyond the basic services and provide you with
-            reenergize your home and enhance your life.
+            Our services go beyond the basic services and We believe a happy customer is everything, which is why we consistently deliver exceptional service.
           </p>
 
           {/* SERVICES */}

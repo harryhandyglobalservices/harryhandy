@@ -24,7 +24,7 @@ export default function PromoBanner() {
                         </h2>
 
                         <p className="text-white/80 text-sm sm:text-base mb-3">
-                            Logistic service provider company plays a pivotal role in the global supply chain ecosystem.
+                           A cleaning services company plays a vital role in maintaining clean, healthy, and productive environments.
                         </p>
 
                         <button onClick={()=>navigate('/our-company')} className="bg-white hover:bg-blue-50 text-black px-5 sm:px-6 py-3 rounded-lg font-semibold shadow-md transition">

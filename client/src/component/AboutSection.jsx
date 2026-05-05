@@ -82,7 +82,7 @@ export default function AboutSection() {
               variants={item}
               className="text-gray-600 text-lg md:text-xl leading-relaxed"
             >
-              At Shiny Clean, we believe a clean space is a happy space. With
+              At Harry Handy Global Services, we believe a clean space is a happy space. With
               years of experience in residential and commercial cleaning, our
               mission is to deliver top-quality services that enhance health,
               comfort, and productivity in every environment.
